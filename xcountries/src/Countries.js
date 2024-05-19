@@ -23,7 +23,7 @@ const Countries = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
             {counties.map((items) =>
-                <Tiles key={items.cca3} name={items.name['common']} flag={items.flags['png']} altFlag={items.cioa} />
+                <Tiles key={items.cca3} name={items.name.common} flag={items.flags.png} altFlag={items.flags.alt} />
             )}
         </div>
     );
