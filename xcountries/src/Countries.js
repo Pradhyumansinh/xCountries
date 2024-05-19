@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 const Countries = () => {
     const [counties, setCountries] = useState([]);
     const url = 'https://restcountries.com/v3.1/all';
 
     useEffect(() => {
-        axios.get(url).then((response) => {
-            setCountries(response.data);
-        }).catch((error) => {
-            console.error(error);
-        });
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => setCountries(data))
+            .catch((error) => console.log(error));
     }, []);
 
     return (
